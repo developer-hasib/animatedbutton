@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated-Button | Hasibul Islam</title>
+    <link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@500&display=swap" rel="stylesheet">
+</head>
+<style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn {
+        width: 75vw;
+        height: 75vh;
+        background: rgb(2, 0, 36);
+        background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(8, 149, 12, 1) 0%, rgba(0, 212, 255, 1) 84%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    h1 {
+        margin-top: 3rem;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 4rem;
+        color: yellow;
+        text-transform: uppercase;
+    }
+
+    .box {
+        width: 14rem;
+        height: 4rem;
+        font-family: 'Grenze Gotisch', cursive;
+        font-size: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background:orange;
+        cursor: pointer;
+        outline: none;
+        border: none;
+        border-radius: 10px;
+        position: relative;
+        z-index: 500;
+    }
+
+    .box::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        background:tomato;
+        z-index: -1;
+        outline: none;
+        border: none;
+        transform: scale(0, 1);
+        border-radius: 10px;
+        transform-origin: bottom right;
+        transition: transform 500ms;
+        -webkit-transition: transform 500ms;
+        -moz-transition: transform 500ms;
+        -ms-transition: transform 500ms;
+        -o-transition: transform 500ms;
+    }
+
+    .box:hover::before {
+        transform: scale(1, 1);
+        transform-origin: top left;
+    }
+
+    .box:hover,
+    .box:focus {
+        color: whitesmoke;
+        transition: 500ms;
+    }
+
+    @media(max-width: 1380px) {
+
+        .btn {
+            width: 80vw;
+            height: 80vh;
+        }
+    }
+
+    @media(max-width: 980px) {
+
+        .btn {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        h1 {
+            font-size: 3rem;
+        }
+
+        @media(max-width: 440px) {
+
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+</style>
+
+<body>
+    <div class="btn">
+        <button class="box">Hello Nizum</button>
+        <h1>animated button</h1>
+    </div>
+</body>
+
+</html>
